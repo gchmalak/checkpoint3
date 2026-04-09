@@ -1,0 +1,57 @@
+/* making the nav bar in the center and relative to the screen */
+.custom-navbar .container-fluid {
+  position: relative;
+}
+
+.custom-navbar .navbar-collapse {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.navbar-nav .nav-link {
+  margin: 0 10px; /* space left & right */
+}
+/* --------------------------------------------------------------------------------------------------- */
+/* styling the nav bar and removing bootstraps default link colors */
+.navbar-nav .nav-link {
+  color: #333333;        /* dark gray for regular links */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #B22222;        /* change hover color, e.g., red */
+}
+
+.navbar-nav .nav-link.active {
+  color: #8B4513;        /* active link color, e.g., brown */
+}
+.navbar-brand {
+  color: #B22222 !important;       /* override Bootstrap default */
+  text-decoration: none !important;
+}
+
+.navbar-brand:hover {
+  color: #8B0000 !important;
+}
+/* so that the nav bar doesnt get hidden by the background pîcture
+ */
+.navbar {
+  position: sticky;      /* sticky so it  stays on top */
+  z-index: 1000;           /* high value ensures it’s above hero and overlay */
+  background-color: rgba(255,255,255,0.9); /* semi-transparent white */
+}
+.navbar-transparent {
+  position: absolute;  /* sit on top of hero */
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.3); /* semi-transparent */
+}
+
+.navbar-transparent .navbar-brand,
+.navbar-transparent .nav-link {
+  color: white !important;        /* visible on top of hero image */
+}
+
+.navbar-transparent .nav-link:hover {
+  color: #f28b82 !important;      /* light red on hover */
+}
