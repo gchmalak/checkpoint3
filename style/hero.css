@@ -1,60 +1,89 @@
- #hero{
-    position: relative;
- }
- .hero h1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 70px;
-}
-.hero p {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#hero .btn {
-  display: block;       /* makes button a block element */
-  width: max-content;   /* shrink to fit text */
-  margin: 20px auto 0; 
-   /* center horizontally, optional top margin */
-   border: solid 1px transparent;
-   border-radius: 15px;
-   padding-top: 10px;
-   padding-bottom: 10px;
-}
-
-#hero a, 
-.hero a {
-  color:black;       /* red links */
-  text-decoration: none; /* remove underline */
-  transition: background-color 300ms ease-in ,
-  color 300ms ease-in;
-}
-
-#hero a:hover {
-  color:white; 
-  background-color: #f28b82;      /* darker red on hover */
-}
+/* HERO SECTION */
 #hero {
-  background-image: url('https://i.pinimg.com/736x/21/74/32/2174329b8ef1603c1cbc68bd9ef5865a.jpg') !important; /* your image path */
-  background-size: cover;   /* cover the whole section */
-  background-position: center; /* center the image */
-  background-repeat: no-repeat; /* don’t tile */
-  position: relative;       /* allows layering content on top */
-  color: white;             /* text color for contrast */
-  padding: 100px 0;         /* optional: space top & bottom */
+  height: 100vh;
+  min-height: 400px;
+  background-image: url('https://i.pinimg.com/736x/38/13/29/38132920e16d8546e028015f8b25f05f.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
+
+/* DARK OVERLAY */
 #hero::before {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.4); /* semi-transparent overlay */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* KEEP CONTENT ABOVE OVERLAY */
+#hero .container {
+  position: relative;
   z-index: 1;
 }
 
-#hero .container {
-  position: relative;
-  z-index: 2; /* make sure content is above overlay */
+/* TEXT SPACING */
+#hero h1 {
+  margin-bottom: 20px;
+  color: #FFF3E6;
+}
+
+#hero p {
+  margin-bottom: 20px;
+  color: #f0d5b8;
+}
+
+/* BUTTON STYLING */
+#hero .btn {
+  display: block;
+  width: max-content;
+  margin: 20px auto 0;
+  border-radius: 15px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+/* LINK STYLE */
+#hero a {
+  text-decoration: none;
+  color: white;
+}
+
+/* HOVER EFFECT */
+#hero a:hover {
+  color: white;
+  background-color: #8B4513 !important;
+}
+
+/* TABLET — medium screens */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2.4rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+}
+
+/* MOBILE — small screens */
+@media (max-width: 576px) {
+  #hero {
+    height: 100svh; /* uses small viewport height on mobile browsers */
+    min-height: 380px;
+  }
+
+  #hero h1 {
+    font-size: 1.8rem;
+  }
+
+  #hero p {
+    font-size: 0.9rem;
+  }
+
+  #hero .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
 }

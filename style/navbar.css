@@ -1,57 +1,77 @@
-/* making the nav bar in the center and relative to the screen */
-.custom-navbar .container-fluid {
-  position: relative;
+/* NAVBAR BASE */
+.custom-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 243, 230, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.custom-navbar .navbar-collapse {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.navbar-nav .nav-link {
-  margin: 0 10px; /* space left & right */
-}
-/* --------------------------------------------------------------------------------------------------- */
-/* styling the nav bar and removing bootstraps default link colors */
-.navbar-nav .nav-link {
-  color: #333333;        /* dark gray for regular links */
-}
-
-.navbar-nav .nav-link:hover {
-  color: #B22222;        /* change hover color, e.g., red */
-}
-
-.navbar-nav .nav-link.active {
-  color: #8B4513;        /* active link color, e.g., brown */
-}
+/* BRAND */
 .navbar-brand {
-  color: #B22222 !important;       /* override Bootstrap default */
-  text-decoration: none !important;
+  color: #B22222 !important;
+  font-family: "Pacifico", cursive;
 }
 
 .navbar-brand:hover {
   color: #8B0000 !important;
 }
-/* so that the nav bar doesnt get hidden by the background pîcture
- */
-.navbar {
-  position: sticky;      /* sticky so it  stays on top */
-  z-index: 1000;           /* high value ensures it’s above hero and overlay */
-  background-color: rgba(255,255,255,0.9); /* semi-transparent white */
-}
-.navbar-transparent {
-  position: absolute;  /* sit on top of hero */
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  background-color: rgba(0,0,0,0.3); /* semi-transparent */
+
+/* NAV LINKS */
+.navbar-nav .nav-link {
+  margin: 0 12px;
+  color: #333333;
 }
 
-.navbar-transparent .navbar-brand,
-.navbar-transparent .nav-link {
-  color: white !important;        /* visible on top of hero image */
+.navbar-nav .nav-link:hover {
+  color: #B22222;
 }
 
-.navbar-transparent .nav-link:hover {
-  color: #f28b82 !important;      /* light red on hover */
+.navbar-nav .nav-link.active {
+  color: #8B4513;
+  font-weight: bold;
+}
+
+/* TOGGLER — visible on cream background */
+.navbar-toggler {
+  border-color: #8B4513;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%238B4513' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* MOBILE — collapsed menu styles (below lg breakpoint) */
+@media (max-width: 991px) {
+  .custom-navbar .navbar-collapse {
+    background: rgba(255, 243, 230, 0.97);
+    border-radius: 0 0 12px 12px;
+    padding: 12px 16px;
+    border-top: 1px solid rgba(139, 69, 19, 0.15);
+  }
+
+  .navbar-nav .nav-link {
+    margin: 6px 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  .navbar-nav .nav-link:hover {
+    background-color: rgba(178, 34, 34, 0.08);
+  }
+}
+
+/* DESKTOP — center links absolutely (lg and above) */
+@media (min-width: 992px) {
+  .custom-navbar .container-fluid {
+    position: relative;
+  }
+
+  .custom-navbar .navbar-collapse {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

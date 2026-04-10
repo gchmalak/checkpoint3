@@ -1,0 +1,111 @@
+/* SECTION BACKGROUND */
+#menu {
+  background-color: #FFF3E6;
+  padding: 60px 0;
+}
+
+#menu h2 {
+  font-family: "Pacifico", cursive;
+  color: #d61515;
+  margin-bottom: 40px;
+}
+
+/* CARD BASE */
+#menu .card {
+  background: rgba(87, 60, 18, 0.38);
+  border-radius: 20px;
+  border: 1px solid rgba(87, 60, 18, 0.55);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER LIFT */
+#menu .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(87, 60, 18, 0.25);
+}
+
+/* IMAGE WRAPPER — enables zoom on hover */
+#menu .card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+#menu .card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* IMAGE ZOOM ON CARD HOVER */
+#menu .card:hover .card-img-top {
+  transform: scale(1.06);
+}
+
+/* OPTIONAL BADGE (e.g. "Popular") */
+#menu .card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #d61515;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* CARD BODY */
+#menu .card-body {
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+#menu .card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFF3E6;
+  font-family: "Pacifico", cursive;
+}
+
+#menu .card-text {
+  font-size: 13px;
+  color: #f0d5b8;
+  line-height: 1.6;
+}
+
+/* PRICE + BUTTON ROW */
+#menu .card-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 243, 230, 0.15);
+}
+
+#menu .card-price {
+  font-size: 16px;
+  font-weight: 800;
+  color: #FFF3E6;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 576px) {
+  #menu .card-img-wrapper {
+    height: 160px;
+  }
+}
