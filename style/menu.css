@@ -47,7 +47,7 @@
   transform: scale(1.06);
 }
 
-/* OPTIONAL BADGE (e.g. "Popular") */
+/* OPTIONAL BADGE ( "Popular") */
 #menu .card-badge {
   position: absolute;
   top: 12px;
